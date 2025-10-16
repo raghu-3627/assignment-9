@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+// Define the structure
+struct Point {
+    float x;
+    float y;
+};
+
+int main() {
+    Point points[7]; // Declare an array of 7 Point structures
+    int count = 0; // To count points in the first quadrant
+
+    // Input coordinates for all 7 points
+    cout << "Enter the x and y coordinates for 7 points:\n";
+    for (int i = 0; i < 7; i++) {
+        cout << "Point " << i + 1 << ":\n";
+        cout << "x = ";
+        cin >> points[i].x;
+        cout << "y = ";
+        cin >> points[i].y;
+    }
+
+    // Check how many points lie in the first quadrant
+    for (int i = 0; i < 7; i++) {
+        if (points[i].x > 0 && points[i].y > 0) {
+            count++;
+        }
+    }
+
+    // Display the result
+    cout << "\nNumber of points in the first quadrant: " << count << endl;
+
+    return 0;
+}
