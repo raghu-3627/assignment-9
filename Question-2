@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+struct Colour{
+    int red;
+    int green;
+    int blue;
+};
+
+
+int main(){
+    Colour colours[5] = {
+        {100, 150, 200},
+        {99, 159, 203},
+        {140, 147, 178},
+        {0, 255, 179},
+        {255, 255, 0},
+        
+    };
+    for(int i = 0; i < 3; i++){
+        colours[i].red = 255 - colours[i].red;
+        colours[i].green = 255 - colours[i].green;
+        colours[i].blue = 255 - colours[i].blue;
+    }
+    cout << "The new RGB colour values:- " << endl;
+    for(int i = 0; i < 5; i++){
+        cout << "colour - " << i + 1 << " :-" << endl;
+        cout << "value of red =  " << colours[i].red << ", ";
+        cout << "value of green = " << colours[i].green << ", ";
+        cout << "value of blue = "<< colours[i].blue << ", " << endl;
+    }
+    return 0;
+}
